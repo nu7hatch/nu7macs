@@ -29,7 +29,7 @@
 		      (setq dired-omit-files-p t)
 		      (setq dired-omit-files ".*[.].pyc"))))
 
-(if (fboundp 'toolbar-mode) (toolbar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'tabbar-mode) (tabbar-mode -1))
 (if (and (fboundp 'menu-bar-mode) (not window-system)) (menu-bar-mode -1))
 

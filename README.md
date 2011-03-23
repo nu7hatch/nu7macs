@@ -14,9 +14,21 @@ enter). Here's the installation code:
 
 ## Features
 
-TODO ...
+* CSS mode
+* Git diff mode
+* Github's gists integration
+* Style guessing
+* HAML mode
+* JavaScript (JS2) mode
+* JSON mode
+* YAML mode
+* Continuous search
+* Smart tabs
+* Git support with magit
+* Sass mode
+* Less mode
 
-## Shortcuts
+## Custom shortcuts
 
 Redo and undo:
 

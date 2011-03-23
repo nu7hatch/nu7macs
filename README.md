@@ -48,8 +48,8 @@ Clone or download the nu7macs sources:
 
 Redo and undo:
 
-    undo    C-x z    Undo changes
-    redo    C-x Z    Redo changes
+    undo    C-u    Undo changes
+    redo    C-R    Redo changes
 
 Text manipulation:
 
@@ -59,10 +59,10 @@ Text manipulation:
 
 Dired shortcuts (in dired mode):
 
-    find-in-workspace            s         Searches for file in current workspace
-    dired-do-delete              del       Deletes selected file
-    find-alternate-file ".."     ^         Go to parent directory
-    dired-find-alternate-file    return    Opens selected file 
+    find-in-workspace            s           Searches for file in current workspace
+    dired-do-delete              <del>       Deletes selected file
+    find-alternate-file ".."     ^           Go to parent directory
+    dired-find-alternate-file    <return>    Opens selected file 
 
 Buffers:
 

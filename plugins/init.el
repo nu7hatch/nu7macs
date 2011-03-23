@@ -12,3 +12,5 @@
 (load-file (concat nu7macs-plugins-path "/fullscreen.el"))
 ;; Auto pair parenthesis
 (load-file (concat nu7macs-plugins-path "/autopair.el"))
+;; Auto pair parenthesis
+(load-file (concat nu7macs-plugins-path "/mode-compile.el"))

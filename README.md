@@ -14,6 +14,9 @@ enter). Here's the installation code:
 
 ## Features
 
+* ELPA package manager
+* Ruby mode
+* RSpec mode
 * CSS mode
 * Git diff mode
 * Github's gists integration

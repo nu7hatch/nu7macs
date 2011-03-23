@@ -6,15 +6,28 @@ emacs.
 
 ## Installation
 
-Installation is very, very simple, just copy following code and paste it in
-new emacs buffer. Afterwords evaluate it (hold M-x, type eval-buffer and click 
-enter). Here's the installation code:
+Attention! This way of installation will overwrite your current configuration:
 
-  TODO...
+    wget git://github.com/nu7hatch/nu7macs/raw/master/install.sh
+    chmod u+x install.sh
+    ./install.sh
+
+### Manual installation
+
+Clone or download the nu7macs sources:
+
+    cd ~/.emacs.d
+    git clone git://github.com/nu7hatch/nu7macs.git
+    
+... and add following code to your `~/.emacs` config file: 
+
+    (setq nu7macs-path "~/.emacs.d/nu7macs")
+    (load-file (concat nu7macs-path "/init.el"))
 
 ## Features
 
 * ELPA package manager
+* YASnippet bundles
 * Ruby mode
 * RSpec mode
 * CSS mode

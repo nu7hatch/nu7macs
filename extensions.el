@@ -20,3 +20,8 @@
 (setq ls-lisp-use-insert-directory-program nil) 
 (setq ls-lisp-dirs-first t)
 (setq ls-list-ignore-case t)
+
+;; Snippets
+(require 'yasnippet-bundle)
+(setq nu7macs-snippets-path (concat nu7macs-path "/snippets/"))
+(yas/load-directory nu7macs-snippets-path)

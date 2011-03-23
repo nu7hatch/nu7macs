@@ -20,30 +20,30 @@ TODO ...
 
 Redo and undo:
 
-  undo    C-x z    Undo changes
-  redo    C-x Z    Redo changes
+    undo    C-x z    Undo changes
+    redo    C-x Z    Redo changes
 
 Text manipulation:
 
-  backward-delete-char    C-h           Deletes char backward
-  move-text-up            C-S-<up>      Moves selected region or current line up
-  move-text-down          C-S-<down>    Moves selected region or current line down
+    backward-delete-char    C-h           Deletes char backward
+    move-text-up            C-S-<up>      Moves selected region or current line up
+    move-text-down          C-S-<down>    Moves selected region or current line down
 
 Dired shortcuts (in dired mode):
 
-  find-in-workspace            s         Searches for file in current workspace
-  dired-do-delete              del       Deletes selected file
-  find-alternate-file ".."     ^         Go to parent directory
-  dired-find-alternate-file    return    Opens selected file 
+    find-in-workspace            s         Searches for file in current workspace
+    dired-do-delete              del       Deletes selected file
+    find-alternate-file ".."     ^         Go to parent directory
+    dired-find-alternate-file    return    Opens selected file 
 
 Buffers:
 
-  refresh-file    <f5>       Refreshes currently edited buffer
-  buffer-menu     C-x C-b    Display menu with list of opened buffers
+    refresh-file    <f5>       Refreshes currently edited buffer
+    buffer-menu     C-x C-b    Display menu with list of opened buffers
 
 Window resizing (s here is <win> or <command> key):
 
-  shrink-window-horizontally     C-s-<left>     Shrinks buffer window horizontally
-  enlarge-window-horizontally    C-s-<right>    Englarges buffer window horizontally
-  shrink-window                  C-s-<down>     Shrinks buffer window vertically
-  englarge-window                C-s-<up>       Englarges buffer window vertically
+    shrink-window-horizontally     C-s-<left>     Shrinks buffer window horizontally
+    enlarge-window-horizontally    C-s-<right>    Englarges buffer window horizontally
+    shrink-window                  C-s-<down>     Shrinks buffer window vertically
+    englarge-window                C-s-<up>       Englarges buffer window vertically

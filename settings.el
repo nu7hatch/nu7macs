@@ -6,11 +6,15 @@
 (setq ac-auto-start nil)
 (setq make-backup-files nil)
 
+(setq linum-format "%d ")
+(setq linum-disabled-modes-list '(eshell-mode wl-summary-mode dired-mode term-mode compilation-mode org-mode text-mode))
+
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
 
 (custom-set-variables
+  '(global-linum-mode t)
   '(column-number-mode t)
   '(font-use-system-font t)
   '(inhibit-startup-screen t)
@@ -20,6 +24,7 @@
 
 (show-paren-mode 1)
 (autopair-global-mode)
+(global-linum-mode t)
 
 (add-hook 'dired-load-hook
 	  (lambda () (load "dired-x")))

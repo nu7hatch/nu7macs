@@ -10,11 +10,6 @@
 (setq nu7macs-packages-path (concat nu7macs-path "/packages"))
 (load-file (concat nu7macs-packages-path "/init.el"))
 
-;; Lium (visual line number support)
-(require 'linum)
-(global-linum-mode t)
-(custom-set-variables '(global-linum-mode t))
-
 ;; Dired ls-lisp
 (require 'ls-lisp)
 (setq ls-lisp-use-insert-directory-program nil) 

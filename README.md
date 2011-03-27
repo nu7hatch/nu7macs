@@ -48,30 +48,34 @@ Clone or download the nu7macs sources:
 
 Redo and undo:
 
-    undo    C-u    Undo changes
-    redo    C-R    Redo changes
+    undo    C-/    Undo changes
+    redo    C-?    Redo changes
 
 Text manipulation:
 
-    backward-delete-char    C-h           Deletes char backward
-    move-text-up            C-S-<up>      Moves selected region or current line up
-    move-text-down          C-S-<down>    Moves selected region or current line down
+    backward-delete-char    C-h    Deletes char backward
+    move-text-up            M-n    Moves selected region or current line up
+    move-text-down          M-p    Moves selected region or current line down
 
 Dired shortcuts (in dired mode):
 
-    find-in-workspace            s           Searches for file in current workspace
-    dired-do-delete              <del>       Deletes selected file
-    find-alternate-file ".."     ^           Go to parent directory
-    dired-find-alternate-file    <return>    Opens selected file 
+    find-in-workspace            s      Searches for file in current workspace
+    dired-do-delete              DEL    Deletes selected file
+    find-alternate-file ".."     ^      Go to parent directory
+    dired-find-alternate-file    RET    Opens selected file 
 
 Buffers:
 
-    refresh-file    <f5>       Refreshes currently edited buffer
+    refresh-file    C-S-r      Refreshes currently edited buffer
     buffer-menu     C-x C-b    Display menu with list of opened buffers
 
-Window resizing (s here is <win> or <command> key):
+Window resizing:
 
-    shrink-window-horizontally     C-s-<left>     Shrinks buffer window horizontally
-    enlarge-window-horizontally    C-s-<right>    Englarges buffer window horizontally
-    shrink-window                  C-s-<down>     Shrinks buffer window vertically
-    englarge-window                C-s-<up>       Englarges buffer window vertically
+    shrink-window-horizontally     C-S-<left>     Shrinks buffer window horizontally
+    enlarge-window-horizontally    C-S-<right>    Englarges buffer window horizontally
+    shrink-window                  C-<down>     Shrinks buffer window vertically
+    englarge-window                C-<up>       Englarges buffer window vertically
+
+Magit:
+
+    magit-status                   C-S-g          Enters into Magit mode

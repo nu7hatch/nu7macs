@@ -1,7 +1,10 @@
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'tabbar-mode) (tabbar-mode -1))
-(if (and (fboundp 'menu-bar-mode) (not window-system)) (menu-bar-mode -1))
-(if (window-system) (toggle-fullscreen))
+(if (window-system)
+    (progn
+      (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+      (if (fboundp 'tabbar-mode) (tabbar-mode -1))
+      (toggle-fullscreen)
+      (color-theme-zenburn))
+  (if (fboundp 'menu-bar-mode) (menu-bar-mode -1)))
 
 (setq history-length 500)
 (setq history-delete-duplicates t)

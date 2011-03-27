@@ -1,8 +1,6 @@
 ;; Themes configuration
 (setq nu7macs-themes-path (concat nu7macs-path "/themes"))
-(if (window-system)
-    (when (require 'color-theme)
-      (load-file (concat nu7macs-themes-path "/init.el"))))
+(load-file (concat nu7macs-themes-path "/init.el"))
 
 ;; Plugins
 (setq nu7macs-plugins-path (concat nu7macs-path  "/plugins"))

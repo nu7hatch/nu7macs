@@ -27,8 +27,9 @@
   '(delete-selection-mode t))
 
 (show-paren-mode 1)
-(autopair-global-mode)
 (global-linum-mode t)
+(autopair-global-mode)
+(shell-command-completion-mode)
 
 (add-hook 'dired-load-hook
 	  (lambda () (load "dired-x")))

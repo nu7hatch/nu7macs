@@ -27,6 +27,7 @@
 (global-set-key (kbd "C-S-g") 'magit-status)
 
 ;; Dired shortcuts
+(global-set-key (kbd "C-x C-d") 'dired)
 (add-hook 'dired-mode-hook
 	  '(lambda()
 	     (define-key dired-mode-map (kbd "<return>") 'dired-find-alternate-file)

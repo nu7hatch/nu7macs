@@ -16,3 +16,5 @@
 (load-file (concat nu7macs-plugins-path "/mode-compile.el"))
 ;; Linum extended mode
 (load-file (concat nu7macs-plugins-path "/linum-ext.el"))
+;; Extended shell-command
+(load-file (concat nu7macs-plugins-path "/shell-command.el"))

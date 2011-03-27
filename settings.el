@@ -40,12 +40,12 @@
 
 (setq linum-disabled-modes-list '(eshell-mode wl-summary-mode dired-mode term-mode compilation-mode org-mode text-mode))
 (setq linum-format
-          (lambda (line)
-            (propertize (format
-                         (let ((w (length (number-to-string
-                                           (count-lines (point-min) (point-max))))))
-                           (concat " %" (number-to-string w)
-				   (if (window-system) "d" "d ")))
-                         line)
-                        'face 'linum)))
+      (lambda (line)
+	(propertize (format
+		     (let ((w (length (number-to-string
+				       (count-lines (point-min) (point-max))))))
+		       (concat " %" (number-to-string w)
+			       (if (window-system) "d" "d ")))
+		     line)
+		    'face 'linum)))
 

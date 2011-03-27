@@ -43,6 +43,8 @@ Clone or download the nu7macs sources:
 * Git support with magit
 * Sass mode
 * Less mode
+* RVM support
+* EProject
 
 ## Custom shortcuts
 
@@ -59,10 +61,11 @@ Text manipulation:
 
 Dired shortcuts (in dired mode):
 
-    find-in-workspace            s      Searches for file in current workspace
-    dired-do-delete              DEL    Deletes selected file
-    find-alternate-file ".."     ^      Go to parent directory
-    dired-find-alternate-file    RET    Opens selected file 
+    find-in-workspace            s          Searches for file in current workspace
+    dired-do-delete              DEL        Deletes selected file
+    find-alternate-file ".."     ^          Go to parent directory
+    dired-find-alternate-file    RET        Opens selected file
+    dired                        C-x C-d    Opens dired (this shortcut eliminates annoying directory brief)
 
 Buffers:
 

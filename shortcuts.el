@@ -15,15 +15,18 @@
 (global-set-key (kbd "C-x t o") 'multi-term)
 
 ;; Redo/Undo
-(global-set-key (kbd "C-R") 'redo)
-(global-set-key (kbd "C-u") 'undo)
+(global-set-key (kbd "C-?") 'redo)
+(global-set-key (kbd "C-/") 'undo)
 
 ;; Refreshing
-(global-set-key (kbd "<f5>") 'refresh-file)
+(global-set-key (kbd "C-S-r") 'refresh-file)
 
 ;; Writing
-(define-key global-map (kbd "RET") 'newline-and-indent)
-(define-key global-map (kbd "C-h") 'backward-delete-char)
+(global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "C-h") 'backward-delete-char)
+
+;; Magit
+(global-set-key (kbd "C-S-g") 'magit-status)
 
 ;; Dired shortcuts
 (add-hook 'dired-mode-hook

@@ -1,13 +1,14 @@
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'tabbar-mode) (tabbar-mode -1))
+(if (and (fboundp 'menu-bar-mode) (not window-system)) (menu-bar-mode -1))
+(if (window-system) (toggle-fullscreen))
+
 (setq history-length 500)
 (setq history-delete-duplicates t)
 (setq backup-directory-alist (quote ((.* . "/tmp/emacs~/"))))
-(setq confirm-kill-emacs 'y-or-n-p)
 (setq show-parent-delay 0)
 (setq ac-auto-start nil)
 (setq make-backup-files nil)
-
-(setq linum-format "%d ")
-(setq linum-disabled-modes-list '(eshell-mode wl-summary-mode dired-mode term-mode compilation-mode org-mode text-mode))
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
@@ -34,8 +35,14 @@
 		      (setq dired-omit-files-p t)
 		      (setq dired-omit-files ".*[.].pyc"))))
 
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'tabbar-mode) (tabbar-mode -1))
-(if (and (fboundp 'menu-bar-mode) (not window-system)) (menu-bar-mode -1))
+(setq linum-disabled-modes-list '(eshell-mode wl-summary-mode dired-mode term-mode compilation-mode org-mode text-mode))
+(setq linum-format
+          (lambda (line)
+            (propertize (format
+                         (let ((w (length (number-to-string
+                                           (count-lines (point-min) (point-max))))))
+                           (concat " %" (number-to-string w)
+				   (if (window-system) "d" "d ")))
+                         line)
+                        'face 'linum)))
 
-(if (window-system) (toggle-fullscreen))

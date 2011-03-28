@@ -6,6 +6,8 @@
 (load-file (concat nu7macs-plugins-path "/redo.el"))
 ;; Files searching support for dired mode
 (load-file (concat nu7macs-plugins-path "/dired-find.el"))
+;; Dired displaying hacks
+(load-file (concat nu7macs-plugins-path "/dired-details.el"))
 ;; Buffers refreshing
 (load-file (concat nu7macs-plugins-path "/refresh.el"))
 ;; Auto fullscreen mode					  

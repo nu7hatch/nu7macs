@@ -66,7 +66,9 @@ Dired shortcuts (in dired mode):
     find-alternate-file ".."     ^          Go to parent directory
     dired-find-alternate-file    RET        Opens selected file
     dired                        C-x C-d    Opens dired (this shortcut eliminates annoying directory brief)
-
+    dired-details-show           )          Shows full details about dired files
+    dired-details-hide           (          Hides dired files details
+    
 Buffers:
 
     refresh-file    C-S-r      Refreshes currently edited buffer

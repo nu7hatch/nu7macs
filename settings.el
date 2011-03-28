@@ -30,6 +30,7 @@
 (global-linum-mode t)
 (autopair-global-mode)
 (shell-command-completion-mode)
+(dired-details-install)
 
 (add-hook 'dired-load-hook
 	  (lambda () (load "dired-x")))

@@ -3,3 +3,7 @@
 
 (load-file (concat nu7macs-packages-path "/package.el"))
 (package-initialize)
+
+;; Color themes support for fucking mac...
+(add-to-list 'load-path (concat nu7macs-packages-path "/color-theme-6.6.0"))
+(require 'color-theme-autoloads)

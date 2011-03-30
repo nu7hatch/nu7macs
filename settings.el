@@ -2,7 +2,7 @@
     (progn
       (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
       (if (fboundp 'tabbar-mode) (tabbar-mode -1))
-      (toggle-fullscreen)
+      ;;(toggle-fullscreen)
       (color-theme-zenburn))
   (if (fboundp 'menu-bar-mode) (menu-bar-mode -1)))
 

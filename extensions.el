@@ -1,7 +1,3 @@
-;; Themes configuration
-(setq nu7macs-themes-path (concat nu7macs-path "/themes"))
-(load-file (concat nu7macs-themes-path "/init.el"))
-
 ;; Plugins
 (setq nu7macs-plugins-path (concat nu7macs-path  "/plugins"))
 (load-file (concat nu7macs-plugins-path "/init.el"))
@@ -9,6 +5,10 @@
 ;; Packages manager (ELPA)
 (setq nu7macs-packages-path (concat nu7macs-path "/packages"))
 (load-file (concat nu7macs-packages-path "/init.el"))
+
+;; Themes configuration
+(setq nu7macs-themes-path (concat nu7macs-path "/themes"))
+(load-file (concat nu7macs-themes-path "/init.el"))
 
 ;; Dired ls-lisp
 (require 'ls-lisp)

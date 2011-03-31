@@ -9,6 +9,7 @@
 (global-set-key (kbd "M-n") 'move-text-down)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-h") 'backward-delete-char)
+(global-set-key (kbd "C-c d") 'duplicate-current-line)
 
 ;; Terminal
 (global-set-key (kbd "C-x t t") 'multi-term-dedicated-toggle)

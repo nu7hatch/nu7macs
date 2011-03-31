@@ -20,3 +20,5 @@
 (load-file (concat nu7macs-plugins-path "/linum-ext.el"))
 ;; Extended shell-command
 (load-file (concat nu7macs-plugins-path "/shell-command.el"))
+;; Duplicate current line helper
+(load-file (concat nu7macs-plugins-path "/duplicate-line.el"))

@@ -26,6 +26,11 @@ Clone or download the nu7macs sources:
 
 ## Features
 
+* Org-Mode
+* Paredit
+* Clojure Mode
+* Slime
+* Swank REPL (Clojure)
 * ELPA package manager
 * YASnippet bundles
 * Ruby mode

@@ -48,4 +48,69 @@
 			       (if (window-system) "d" "d ")))
 		     line)
 		    'face 'linum)))
+(require 'ido)
+(ido-mode t)
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-create-new-buffer 'always
+      ido-use-filename-at-ppoint nil
+      ido-max-prospects 10)
 
+;Make the server start on load
+(server-start)
+
+;; MAGIT CONFIG
+(setq magit-git-executable "/usr/local/bin/git")
+
+;;PAREDIT CONFIG
+(autoload 'paredit-mode "paredit"
+    "Minor mode for pseudo-structurally editing Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook       (lambda () (paredit-mode +1)))
+(add-hook 'lisp-mode-hook             (lambda () (paredit-mode +1)))
+(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
+
+
+(add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
+;; Stop SLIME's REPL from grabbing DEL,
+    ;; which is annoying when backspacing over a '('
+    (defun override-slime-repl-bindings-with-paredit ()
+    (define-key slime-repl-mode-map
+        (read-kbd-macro paredit-backward-delete-key) nil))
+        (add-hook 'slime-repl-mode-hook 'override-slime-repl-bindings-with-paredit)
+
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (paredit-mode t)
+            (turn-on-eldoc-mode)
+            (eldoc-add-command
+             'paredit-backward-delete
+             'paredit-close-round)
+            (local-set-key (kbd "RnnnET") 'electrify-return-if-match)
+            (eldoc-add-command 'electrify-return-if-match)
+	      (show-paren-mode t)))
+
+(require 'bs)
+(global-set-key (kbd "C-x C-b") 'bs-show)
+(add-to-list 'bs-configurations
+             '("channels" nil nil "^[^#]" nil nil))
+(add-to-list 'bs-configurations
+             '("targets" nil nil nil
+               (lambda (buf)
+                 (with-current-buffer buf
+                   (not (erc-default-target)))) nil))
+
+;Productivity helpers like recent files
+(require 'cl)
+(require 'saveplace)
+(require 'ffap)
+(require 'uniquify)
+(require 'ansi-color)
+(require 'recentf)
+
+(recentf-mode 1)
+
+(global-set-key "\C-xf" 'recentf-open-files)
+
+;Windmove (switch buffers with shift + Arrow)
+(when (fboundp 'windmove-default-keybindings)
+      (windmove-default-keybindings))

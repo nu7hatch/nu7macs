@@ -22,3 +22,7 @@
 (load-file (concat nu7macs-plugins-path "/shell-command.el"))
 ;; Duplicate current line helper
 (load-file (concat nu7macs-plugins-path "/duplicate-line.el"))
+;; Paredit
+(load-file (concat nu7macs-plugins-path "/paredit.el"))
+;;; bs.el --- menu for selecting and displaying buffers
+(load-file (concat nu7macs-plugins-path "/bs.el"))

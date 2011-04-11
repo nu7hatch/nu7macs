@@ -109,6 +109,10 @@
 (require 'ansi-color)
 (require 'recentf)
 
+(recentf-mode 1)
+
+(global-set-key "\C-xf" 'recentf-open-files)
+
 ;Windmove (switch buffers with shift + Arrow)
 (when (fboundp 'windmove-default-keybindings)
       (windmove-default-keybindings))

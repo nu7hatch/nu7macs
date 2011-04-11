@@ -108,3 +108,7 @@
 (require 'uniquify)
 (require 'ansi-color)
 (require 'recentf)
+
+;Windmove (switch buffers with shift + Arrow)
+(when (fboundp 'windmove-default-keybindings)
+      (windmove-default-keybindings))

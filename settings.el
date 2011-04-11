@@ -100,3 +100,11 @@
                (lambda (buf)
                  (with-current-buffer buf
                    (not (erc-default-target)))) nil))
+
+;Productivity helpers like recent files
+(require 'cl)
+(require 'saveplace)
+(require 'ffap)
+(require 'uniquify)
+(require 'ansi-color)
+(require 'recentf)

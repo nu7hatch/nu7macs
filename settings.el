@@ -58,6 +58,9 @@
       ido-use-filename-at-ppoint nil
       ido-max-prospects 10)
 
+;Make the server start on load
+(server-start)
+
 ;; MAGIT CONFIG
 (setq magit-git-executable "/usr/local/bin/git")
 
@@ -84,6 +87,16 @@
             (eldoc-add-command
              'paredit-backward-delete
              'paredit-close-round)
-            (local-set-key (kbd "RET") 'electrify-return-if-match)
+            (local-set-key (kbd "RnnnET") 'electrify-return-if-match)
             (eldoc-add-command 'electrify-return-if-match)
 	      (show-paren-mode t)))
+
+(require 'bs)
+(global-set-key (kbd "C-x C-b") 'bs-show)
+(add-to-list 'bs-configurations
+             '("channels" nil nil "^[^#]" nil nil))
+(add-to-list 'bs-configurations
+             '("targets" nil nil nil
+               (lambda (buf)
+                 (with-current-buffer buf
+                   (not (erc-default-target)))) nil))

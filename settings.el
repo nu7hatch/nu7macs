@@ -50,4 +50,10 @@
 			       (if (window-system) "d" "d ")))
 		     line)
 		    'face 'linum)))
-
+(require 'ido)
+(ido-mode t)
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-create-new-buffer 'always
+      ido-use-filename-at-ppoint nil
+      ido-max-prospects 10)

@@ -1,8 +1,8 @@
 ;; Resizing windows with no fuss
-(global-set-key (kbd "C-S-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "C-S-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "C-<down>") 'shrink-window)
-(global-set-key (kbd "C-<up>") 'enlarge-window)
+(global-set-key (kbd "C-s-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "C-s-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "C-s-<down>") 'shrink-window)
+(global-set-key (kbd "C-s-<up>") 'enlarge-window)
 
 ;; Text manipulation
 (global-set-key (kbd "M-p") 'move-text-up)
@@ -11,7 +11,8 @@
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (global-set-key (kbd "C-c d") 'duplicate-current-line)
 (global-set-key (kbd "C-c b") 'backward-kill-word)
-(global-set-key (kbd "C-c C-d") 'kill-whole-line)
+(global-set-key (kbd "C-c f") 'kill-word)
+(global-set-key (kbd "C-c k") 'kill-whole-line)
 
 ;; Terminal
 (global-set-key (kbd "C-x t t") 'multi-term-dedicated-toggle)

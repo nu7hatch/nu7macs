@@ -36,9 +36,7 @@
 	  (lambda () (load "dired-x")))
 
 (add-hook 'dired-mode-hook
-	  (function (lambda ()
-		      (setq dired-omit-files-p t)
-		      (setq dired-omit-files ".*[.].pyc"))))
+	  (function (lambda () (setq dired-omit-files-p t))))
 
 (setq linum-disabled-modes-list '(eshell-mode wl-summary-mode dired-mode term-mode compilation-mode org-mode text-mode))
 (setq linum-format

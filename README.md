@@ -60,10 +60,14 @@ Redo and undo:
 
 Text manipulation:
 
-    backward-delete-char    C-h    Deletes char backward (Deprecated because it shadows normal Emacs help function)
-    move-text-up            M-n    Moves selected region or current line up
-    move-text-down          M-p    Moves selected region or current line down
-
+    backward-delete-char       C-h      Deletes char backward(Deprecated because it shadows normal Emacs help function)
+    move-text-up               M-n      Moves selected region or current line up
+    move-text-down             M-p      Moves selected region or current line down
+    backward-kill-word         C-c b    Kills single word backward
+    kill-word                  C-c f    Kills single word
+    kill-whole-line            C-c k    Kills current selected line
+    duplicate-current-line     C-c d    Duplicates current selected line
+    
 Dired shortcuts (in dired mode):
 
     find-in-workspace            s          Searches for file in current workspace
@@ -81,10 +85,10 @@ Buffers:
 
 Window resizing:
 
-    shrink-window-horizontally     C-S-<left>     Shrinks buffer window horizontally
-    enlarge-window-horizontally    C-S-<right>    Englarges buffer window horizontally
-    shrink-window                  C-<down>     Shrinks buffer window vertically
-    englarge-window                C-<up>       Englarges buffer window vertically
+    shrink-window-horizontally     C-s-<left>     Shrinks buffer window horizontally
+    enlarge-window-horizontally    C-s-<right>    Englarges buffer window horizontally
+    shrink-window                  C-s-<down>     Shrinks buffer window vertically
+    englarge-window                C-s-<up>       Englarges buffer window vertically
 
 Magit:
 

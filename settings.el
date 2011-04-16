@@ -62,6 +62,7 @@
 (server-start)
 
 ;; MAGIT CONFIG
+(require 'magit)
 (setq magit-git-executable "/usr/local/bin/git")
 
 ;;PAREDIT CONFIG

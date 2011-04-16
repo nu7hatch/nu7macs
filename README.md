@@ -60,7 +60,7 @@ Redo and undo:
 
 Text manipulation:
 
-    backward-delete-char    C-h    Deletes char backward
+    backward-delete-char    C-h    Deletes char backward (Deprecated because it shadows normal Emacs help function)
     move-text-up            M-n    Moves selected region or current line up
     move-text-down          M-p    Moves selected region or current line down
 

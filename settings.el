@@ -1,11 +1,12 @@
+;; Window
 (if (window-system)
     (progn
       (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
       (if (fboundp 'tabbar-mode) (tabbar-mode -1))
-      ;;(toggle-fullscreen)
       (color-theme-zenburn))
   (if (fboundp 'menu-bar-mode) (menu-bar-mode -1)))
 
+;; Cusom settings
 (setq history-length 500)
 (setq history-delete-duplicates t)
 (setq backup-directory-alist (quote ((.* . "/tmp/emacs~/"))))
@@ -13,10 +14,12 @@
 (setq ac-auto-start nil)
 (setq make-backup-files nil)
 
+;; Enabled disabled shortcuts
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
 
+;; More cutstom settings
 (custom-set-variables
   '(global-linum-mode t)
   '(column-number-mode t)
@@ -26,19 +29,57 @@
   '(truncate-lines t)
   '(delete-selection-mode t))
 
+;; Setup custom modes
 (show-paren-mode 1)
 (global-linum-mode t)
 (autopair-global-mode)
 (shell-command-completion-mode)
 (dired-details-install)
 
-(add-hook 'dired-load-hook
-	  (lambda () (load "dired-x")))
+;; Dired hooks / ommiting files
+(require 'dired-x)
 
-(add-hook 'dired-mode-hook
-	  (function (lambda () (setq dired-omit-files-p t))))
+(setq dired-omit-files 
+      (rx (or (seq bol (? ".") "#")           ;; emacs autosave files 
+              (seq "~" eol)                   ;; backup-files 
+              (seq bol "CVS" eol)             ;; CVS dirs
+	      (seq bol "\.svn" eol)           ;; SVN dirs
+	      (seq bol "\.git" eol)           ;; GIT dir
+	      (seq bol ".eproject" eol)       ;; eproject files
+	      (seq "\.py(c|o)" eol)           ;; python compiled files
+	      (seq "\.rbc" eol)               ;; rubinius compiled files
+	      (seq "\.s?(o|a)" eol)           ;; c/c++ shit
+	      (seq "\.l(a|o)" eol)            ;; ...
+	      (seq "\.in" eol)                ;; autotools files...
+	      (seq "\.status" eol)            ;; ...
+	      (seq bol "\.deps" eol)          ;; ...
+	      (seq bol "\.libs" eol)          ;; ...
+	      (seq bol "stamp-h1" eol)        ;; ...
+	      (seq bol "libtool" eol)         ;; ...
+	      (seq bol "autom4te.cache" eol)  ;; ...
+	      (seq bol "aclocal.m4" eol)      ;; m4 files
+	      (seq bol "build-m4" eol)        ;; ...
+	      (seq bol "build-aux" eol)       ;; ...
+	      (seq "\.log" eol)               ;; log files
+              ))) 
 
-(setq linum-disabled-modes-list '(eshell-mode wl-summary-mode dired-mode term-mode compilation-mode org-mode text-mode))
+(add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
+
+;; CoffeeScript hooks
+(defun coffee-custom ()
+  (set (make-local-variable 'tab-width) 2))
+
+(add-hook 'coffee-mode-hook '(lambda() (coffee-custom)))
+
+;; Disable line numbers in given modes
+(setq linum-disabled-modes-list
+      '(eshell-mode
+	wl-summary-mode
+	dired-mode
+	term-mode
+	compilation-mode
+	org-mode
+	text-mode))
 (setq linum-format
       (lambda (line)
 	(propertize (format
@@ -48,6 +89,8 @@
 			       (if (window-system) "d" "d ")))
 		     line)
 		    'face 'linum)))
+
+;; IDO mode settings
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-prefix nil
@@ -56,41 +99,14 @@
       ido-use-filename-at-ppoint nil
       ido-max-prospects 10)
 
-;Make the server start on load
+;; Make the server start on load
 (server-start)
 
-;; MAGIT CONFIG
-(setq magit-git-executable "/usr/local/bin/git")
+;; Magit settings
+(setq magit-git-executable "/usr/bin/git")
 
-;;PAREDIT CONFIG
-(autoload 'paredit-mode "paredit"
-    "Minor mode for pseudo-structurally editing Lisp code." t)
-(add-hook 'emacs-lisp-mode-hook       (lambda () (paredit-mode +1)))
-(add-hook 'lisp-mode-hook             (lambda () (paredit-mode +1)))
-(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
-
-
-(add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
-;; Stop SLIME's REPL from grabbing DEL,
-    ;; which is annoying when backspacing over a '('
-    (defun override-slime-repl-bindings-with-paredit ()
-    (define-key slime-repl-mode-map
-        (read-kbd-macro paredit-backward-delete-key) nil))
-        (add-hook 'slime-repl-mode-hook 'override-slime-repl-bindings-with-paredit)
-
-(add-hook 'emacs-lisp-mode-hook
-          (lambda ()
-            (paredit-mode t)
-            (turn-on-eldoc-mode)
-            (eldoc-add-command
-             'paredit-backward-delete
-             'paredit-close-round)
-            (local-set-key (kbd "RnnnET") 'electrify-return-if-match)
-            (eldoc-add-command 'electrify-return-if-match)
-	      (show-paren-mode t)))
-
+;; Better buffor search
 (require 'bs)
-(global-set-key (kbd "C-x C-b") 'bs-show)
 (add-to-list 'bs-configurations
              '("channels" nil nil "^[^#]" nil nil))
 (add-to-list 'bs-configurations
@@ -99,18 +115,16 @@
                  (with-current-buffer buf
                    (not (erc-default-target)))) nil))
 
-;Productivity helpers like recent files
+;; Productivity helpers like recent files
 (require 'cl)
 (require 'saveplace)
 (require 'ffap)
 (require 'uniquify)
 (require 'ansi-color)
-(require 'recentf)
 
+(require 'recentf)
 (recentf-mode 1)
 
-(global-set-key "\C-xf" 'recentf-open-files)
-
-;Windmove (switch buffers with shift + Arrow)
+;; Windmove (switch buffers with shift + Arrow)
 (when (fboundp 'windmove-default-keybindings)
       (windmove-default-keybindings))

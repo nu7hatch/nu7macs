@@ -27,6 +27,10 @@
 ;; Refreshing buffers
 (global-set-key (kbd "C-S-r") 'refresh-file)
 
+;; Navigating between buffers
+(global-set-key (kbd "C-x C-b") 'bs-show)
+(global-set-key (kbd "C-x f") 'recentf-open-files)
+
 ;; Magit
 (global-set-key (kbd "C-S-g") 'magit-status)
 
@@ -38,4 +42,3 @@
 	     (define-key dired-mode-map (kbd "<delete>") 'dired-do-delete)
 	     (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")));
 	     (define-key dired-mode-map (kbd "s") 'find-in-workspace)))
-

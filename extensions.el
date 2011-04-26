@@ -6,6 +6,10 @@
 (setq nu7macs-packages-path (concat nu7macs-path "/packages"))
 (load-file (concat nu7macs-packages-path "/init.el"))
 
+;; Custom modes
+(setq nu7macs-modes-path (concat nu7macs-path "/modes"))
+(load-file (concat nu7macs-modes-path "/init.el"))
+
 ;; Themes configuration
 (setq nu7macs-themes-path (concat nu7macs-path "/themes"))
 (load-file (concat nu7macs-themes-path "/init.el"))

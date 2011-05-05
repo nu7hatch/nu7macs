@@ -26,3 +26,5 @@
 (load-file (concat nu7macs-plugins-path "/paredit.el"))
 ;;; bs.el --- menu for selecting and displaying buffers
 (load-file (concat nu7macs-plugins-path "/bs.el"))
+;;; Mustache templating mode
+(load-file (concat nu7macs-plugins-path "/mustache-mode.el"))

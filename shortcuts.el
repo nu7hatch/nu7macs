@@ -8,7 +8,6 @@
 (global-set-key (kbd "M-p") 'move-text-up)
 (global-set-key (kbd "M-n") 'move-text-down)
 (global-set-key (kbd "RET") 'newline-and-indent)
-(global-set-key (kbd "C-h") 'backward-delete-char)
 (global-set-key (kbd "C-c d") 'duplicate-current-line)
 (global-set-key (kbd "C-c b") 'backward-kill-word)
 (global-set-key (kbd "C-c f") 'kill-word)

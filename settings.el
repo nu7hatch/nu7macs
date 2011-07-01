@@ -71,6 +71,12 @@
 
 (add-hook 'coffee-mode-hook '(lambda() (coffee-custom)))
 
+;; Markdown mode settings
+(add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.mdwn" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.mdt" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown" . markdown-mode))
+
 ;; Disable line numbers in given modes
 (setq linum-disabled-modes-list
       '(eshell-mode

@@ -13,6 +13,12 @@
 (global-set-key (kbd "C-c f") 'kill-word)
 (global-set-key (kbd "C-c k") 'kill-whole-line)
 
+;; Swap help with backspace
+(if (and (boundp 'swap-help-with-backward-delete-char) swap-help-with-backward-delete-char)
+    (progn
+      (global-set-key (kbd "C-h") 'backward-delete-char)
+      (global-set-key (kbd "C-S-h") 'help)))
+
 ;; Terminal
 (global-set-key (kbd "C-x t t") 'multi-term-dedicated-toggle)
 (global-set-key (kbd "C-x t n") 'multi-term-next)

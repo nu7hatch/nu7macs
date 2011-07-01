@@ -47,3 +47,6 @@
 	     (define-key dired-mode-map (kbd "<delete>") 'dired-do-delete)
 	     (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")));
 	     (define-key dired-mode-map (kbd "s") 'find-in-workspace)))
+
+;; Autocompletion
+(global-set-key (kbd "M-/") 'auto-complete)

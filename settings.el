@@ -106,6 +106,13 @@
 	   ido-use-filename-at-ppoint nil
 	   ido-max-prospects 10)))
 
+;; Autocompletion
+(add-to-list 'load-path (concat nu7macs-path "/vendor/auto-complete"))
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories (concat nu7macs-path "/vendor/auto-complete/dict"))
+(ac-config-default)
+(setq ac-auto-start 0)
+
 ;; Make the server start on load
 (server-start)
 

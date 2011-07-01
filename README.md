@@ -93,3 +93,15 @@ Window resizing:
 Magit:
 
     magit-status                   C-S-g          Enters into Magit mode
+
+## Extra configuration
+
+You can also enable some extra features in your `.emacs` file.
+
+### IDO mode for opening files
+
+    (setq use-ido-mode t)
+
+### The `backward-delete-char` under `C-h`
+
+    (setq swap-help-with-backward-delete-char t)

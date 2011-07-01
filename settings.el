@@ -91,13 +91,14 @@
 		    'face 'linum)))
 
 ;; IDO mode settings
-(require 'ido)
-(ido-mode t)
-(setq ido-enable-prefix nil
-      ido-enable-flex-matching t
-      ido-create-new-buffer 'always
-      ido-use-filename-at-ppoint nil
-      ido-max-prospects 10)
+(if (and (boundp 'use-ido-mode) use-ido-mode)
+    ((require 'ido)
+     (ido-mode t)
+     (setq ido-enable-prefix nil
+	   ido-enable-flex-matching t
+	   ido-create-new-buffer 'always
+	   ido-use-filename-at-ppoint nil
+	   ido-max-prospects 10)))
 
 ;; Make the server start on load
 (server-start)

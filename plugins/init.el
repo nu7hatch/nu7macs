@@ -24,7 +24,9 @@
 (load-file (concat nu7macs-plugins-path "/duplicate-line.el"))
 ;; Paredit
 (load-file (concat nu7macs-plugins-path "/paredit.el"))
-;;; bs.el --- menu for selecting and displaying buffers
+;; bs.el --- menu for selecting and displaying buffers
 (load-file (concat nu7macs-plugins-path "/bs.el"))
-;;; Mustache templating mode
+;; Mustache templating mode
 (load-file (concat nu7macs-plugins-path "/mustache-mode.el"))
+;; File opening with jump to line
+(load-file (concat nu7macs-plugins-path "/fancy-find-file.el"))

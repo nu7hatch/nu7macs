@@ -1,0 +1,4 @@
+#name : debugger
+#group : general
+# --
+require "ruby-debug"; debugger

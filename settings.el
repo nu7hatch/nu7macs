@@ -85,6 +85,12 @@
 (add-to-list 'auto-mode-alist '("\\.mdt" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown" . markdown-mode))
 
+;; CMake mode settings
+(setq auto-mode-alist
+      (append '(("CMakeLists\\.txt\\'" . cmake-mode)
+		("\\.cmake\\'" . cmake-mode))
+	      auto-mode-alist))
+
 ;; Disable line numbers in given modes
 (setq linum-disabled-modes-list
       '(eshell-mode

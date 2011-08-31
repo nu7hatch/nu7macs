@@ -13,6 +13,7 @@
 (setq show-parent-delay 0)
 (setq ac-auto-start nil)
 (setq make-backup-files nil)
+(setq default-tab-width 4)
 
 ;; Enabled disabled shortcuts
 (put 'upcase-region 'disabled nil)
@@ -21,13 +22,13 @@
 
 ;; More cutstom settings
 (custom-set-variables
-  '(global-linum-mode t)
-  '(column-number-mode t)
-  '(font-use-system-font t)
-  '(inhibit-startup-screen t)
-  '(scroll-bar-mode (quote right))
-  '(truncate-lines t)
-  '(delete-selection-mode t))
+ '(global-linum-mode t)
+ '(column-number-mode t)
+ '(font-use-system-font t)
+ '(inhibit-startup-screen t)
+ '(scroll-bar-mode (quote right))
+ '(truncate-lines t)
+ '(delete-selection-mode t))
 
 ;; Setup custom modes
 (show-paren-mode 1)
@@ -61,7 +62,11 @@
 	      (seq bol "build-m4" eol)        ;; ...
 	      (seq bol "build-aux" eol)       ;; ...
 	      (seq "\.log" eol)               ;; log files
-              ))) 
+		  (seq "\.6" eol)                 ;; go files
+		  (seq "\.out" eol)               ;; ...
+		  (seq bol "_test" eol)           ;; ...
+		  (seq bol "_testmain.go" eol)    ;; ...
+		  ))) 
 
 (add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
 

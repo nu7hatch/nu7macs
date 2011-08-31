@@ -71,6 +71,9 @@
 
 (add-hook 'coffee-mode-hook '(lambda() (coffee-custom)))
 
+;; Go mode settings
+(add-to-list 'auto-mode-alist (cons "\\.go$" #'go-mode))
+
 ;; Markdown mode settings
 (add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.mdwn" . markdown-mode))

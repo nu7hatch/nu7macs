@@ -77,12 +77,16 @@
 
 ;; CoffeeScript hooks
 (defun coffee-custom ()
-  (set (make-local-variable 'tab-width) 2))
+  (set (make-local-variable 'tab-width) 4))
 
 (add-hook 'coffee-mode-hook '(lambda() (coffee-custom)))
 
+;; YAML mode settings
+(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
 ;; Go mode settings
-(add-to-list 'auto-mode-alist (cons "\\.go$" #'go-mode))
+(add-to-list 'auto-mode-alist '("\\.go$" . go-mode))
 
 ;; Markdown mode settings
 (add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))
@@ -95,6 +99,13 @@
       (append '(("CMakeLists\\.txt\\'" . cmake-mode)
 		("\\.cmake\\'" . cmake-mode))
 	      auto-mode-alist))
+
+;; Html mode hacks
+(add-hook 'html-mode-hook
+		  (lambda()
+			(setq c-basic-indent 2)
+            (setq sgml-basic-offset 2)
+            (setq indent-tabs-mode nil)))
 
 ;; Disable line numbers in given modes
 (setq linum-disabled-modes-list

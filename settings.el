@@ -75,11 +75,20 @@
 
 (add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
 
+;; MMM mode settings
+(require 'mmm-auto)
+(setq mmm-global-mode 'maybe)
+(setq mmm-submode-decoration-level 2)
+
 ;; CoffeeScript hooks
 (defun coffee-custom ()
   (set (make-local-variable 'tab-width) 4))
 
 (add-hook 'coffee-mode-hook '(lambda() (coffee-custom)))
+
+;; ERb mode
+(add-to-list 'auto-mode-alist '("\\.rhtml$" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\.erb$" . html-mode))
 
 ;; YAML mode settings
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))

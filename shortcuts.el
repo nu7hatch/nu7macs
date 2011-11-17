@@ -50,3 +50,6 @@
 
 ;; Autocompletion
 (global-set-key (kbd "M-/") 'auto-complete)
+
+;; Utils
+(global-set-key (kbd "C-c C-w") 'tag-word-or-region)

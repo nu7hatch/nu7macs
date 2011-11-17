@@ -30,3 +30,5 @@
 (load-file (concat nu7macs-plugins-path "/mustache-mode.el"))
 ;; File opening with jump to line
 (load-file (concat nu7macs-plugins-path "/fancy-find-file.el"))
+;; Surround region with html tag
+(load-file (concat nu7macs-plugins-path "/tag-region.el"))

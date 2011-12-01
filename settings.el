@@ -75,11 +75,6 @@
 
 (add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
 
-;; MMM mode settings
-(require 'mmm-auto)
-(setq mmm-global-mode 'maybe)
-(setq mmm-submode-decoration-level 2)
-
 ;; CoffeeScript hooks
 (defun coffee-custom ()
   (set (make-local-variable 'tab-width) 4))

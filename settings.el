@@ -93,13 +93,18 @@
 (add-to-list 'auto-mode-alist '("\\.go$" . go-mode))
 
 ;; Markdown mode settings
-(add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.mdwn" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.mdt" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.mdwn$" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.mdt$" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 
 ;; Asciidoc mode settings
-(add-to-list 'auto-mode-alist '("\\.txt" . adoc-mode))
+(autoload 'doc-mode "doc-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.txt$" . doc-mode))
+(add-hook 'doc-mode-hook
+		  '(lambda ()
+			 (turn-on-auto-fill)
+			 (require 'asciidoc)))
 
 ;; CMake mode settings
 (setq auto-mode-alist

@@ -8,4 +8,8 @@
 (load-file (concat nu7macs-modes-path "/cmake-mode.el"))
 ;; YAML mode
 (load-file (concat nu7macs-modes-path "/yaml-mode.el"))
+;; ERB mode
+;;(load-file (concat nu7macs-modes-path "/erb-mode.el"))
+;; Asciidoc mode
+(load-file (concat nu7macs-modes-path "/adoc-mode.el"))
 

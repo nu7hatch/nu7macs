@@ -103,6 +103,9 @@
 (add-to-list 'auto-mode-alist '("\\.mdt" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown" . markdown-mode))
 
+;; Asciidoc mode settings
+(add-to-list 'auto-mode-alist '("\\.txt" . adoc-mode))
+
 ;; CMake mode settings
 (setq auto-mode-alist
       (append '(("CMakeLists\\.txt\\'" . cmake-mode)

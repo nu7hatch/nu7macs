@@ -138,6 +138,13 @@
 		     line)
 		    'face 'linum)))
 
+;; C/C++ settings
+(setq-default c-basic-offset 4
+			  c-indent-level 4
+			  c-default-style "gnu"
+			  c-indent-tabs-mode t
+			  c-tab-always-indent t)
+
 ;; IDO mode settings
 (if (and (boundp 'use-ido-mode) use-ido-mode)
     ((require 'ido)

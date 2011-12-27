@@ -12,3 +12,5 @@
 (load-file (concat nu7macs-modes-path "/doc-mode.el"))
 ;; Asciidoc mode
 (load-file (concat nu7macs-modes-path "/asciidoc-mode.el"))
+;; Protobuf mode
+(load-file (concat nu7macs-modes-path "/protobuf-mode.el"))

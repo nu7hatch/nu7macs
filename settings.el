@@ -142,8 +142,17 @@
 (setq-default c-basic-offset 4
 			  c-indent-level 4
 			  c-default-style "gnu"
-			  c-indent-tabs-mode t
-			  c-tab-always-indent t)
+			  c-lineup-arglist t
+			  indent-tabs-mode nil
+              c-indent-tabs-mode nil
+			  c-lineup-close-paren t)
+
+(defun my-c-mode-hook ()
+  (c-set-offset 'arglist-cont '(c-lineup-arglist-operators 0))
+  (c-set-offset 'arglist-cont-nonempty '(c-lineup-arglist-operators c-lineup-arglist))
+  (c-set-offset 'arglist-close '(c-lineup-arglist-close-under-paren)))
+(add-hook 'c-mode-hook 'my-c-mode-hook)
+(add-hook 'c++-mode-hook 'my-c-mode-hook)
 
 ;; IDO mode settings
 (if (and (boundp 'use-ido-mode) use-ido-mode)

@@ -98,6 +98,10 @@
 (add-to-list 'auto-mode-alist '("\\.mdt$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 
+;; Erlang mode settings
+(add-to-list 'auto-mode-alist '("\\.erl$" . erlang-mode))
+(add-to-list 'auto-mode-alist '("\\.hrl$" . erlang-mode))
+
 ;; Asciidoc mode settings
 (autoload 'doc-mode "doc-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.txt$" . doc-mode))

@@ -14,3 +14,5 @@
 (load-file (concat nu7macs-modes-path "/asciidoc-mode.el"))
 ;; Protobuf mode
 (load-file (concat nu7macs-modes-path "/protobuf-mode.el"))
+;; Erlang mode
+(load-file (concat nu7macs-modes-path "/erlang-mode.el"))

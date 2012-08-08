@@ -81,9 +81,17 @@
 
 (add-hook 'coffee-mode-hook '(lambda() (coffee-custom)))
 
-;; ERb mode
+;; ERb files
 (add-to-list 'auto-mode-alist '("\\.rhtml$" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.html\\.erb$" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.erb$" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\.erb$" . javascript-mode))
+
+;; Ruby mode
+(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("^Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("^Rakefile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("^Vagrantfile$" . ruby-mode))
 
 ;; YAML mode settings
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))

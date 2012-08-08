@@ -53,3 +53,6 @@
 
 ;; Utils
 (global-set-key (kbd "C-c C-w") 'tag-word-or-region)
+
+;; Misc
+(global-set-key [f11] 'toggle-fullscreen)

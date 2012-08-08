@@ -11,7 +11,7 @@
 ;; Buffers refreshing
 (load-file (concat nu7macs-plugins-path "/refresh.el"))
 ;; Auto fullscreen mode					  
-;;(load-file (concat nu7macs-plugins-path "/fullscreen.el"))
+(load-file (concat nu7macs-plugins-path "/fullscreen.el"))
 ;; Auto pair parenthesis
 (load-file (concat nu7macs-plugins-path "/autopair.el"))
 ;; Mode compile
@@ -26,8 +26,6 @@
 (load-file (concat nu7macs-plugins-path "/paredit.el"))
 ;; bs.el --- menu for selecting and displaying buffers
 (load-file (concat nu7macs-plugins-path "/bs.el"))
-;; Mustache templating mode
-(load-file (concat nu7macs-plugins-path "/mustache-mode.el"))
 ;; File opening with jump to line
 (load-file (concat nu7macs-plugins-path "/fancy-find-file.el"))
 ;; Surround region with html tag

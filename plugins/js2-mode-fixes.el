@@ -78,3 +78,13 @@
   (message "My JS2 hook"))
 
 (add-hook 'js2-mode-hook 'my-js2-mode-hook)
+
+(eval-after-load "autopair"
+  '(progn
+     (autopair-global-mode 1)
+
+     (setq my-autopair-off-modes '(js2-mode))
+     (dolist (m my-autopair-off-modes)
+       (add-hook (intern (concat (symbol-name m) "-hook"))
+                 #'(lambda () (setq autopair-dont-activate t))))
+     ))

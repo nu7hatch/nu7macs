@@ -24,6 +24,7 @@
 ;;; Code:
 
 (eval-when-compile (require 'cl))
+(require 'font-lock)
 
 (defvar go-mode-syntax-table
   (let ((st (make-syntax-table)))

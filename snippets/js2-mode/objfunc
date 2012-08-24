@@ -1,6 +1,6 @@
 #name : x: function (...) {...}
 #by : nu7hatch
 # --
- function($2) {
+$1: function($2) {
     $0
 }

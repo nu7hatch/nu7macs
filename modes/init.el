@@ -20,3 +20,5 @@
 (load-file (concat nu7macs-modes-path "/erlang-mode.el"))
 ;; Mistache templating mode
 (load-file (concat nu7macs-modes-path "/mustache-mode.el"))
+;; Espresso mode
+(load-file (concat nu7macs-modes-path "/espresso.el"))

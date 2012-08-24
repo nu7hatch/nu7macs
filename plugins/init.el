@@ -30,3 +30,5 @@
 (load-file (concat nu7macs-plugins-path "/fancy-find-file.el"))
 ;; Surround region with html tag
 (load-file (concat nu7macs-plugins-path "/tag-region.el"))
+;; Surround region with html tag
+(load-file (concat nu7macs-plugins-path "/js2-mode-fixes.el"))

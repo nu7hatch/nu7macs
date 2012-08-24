@@ -212,3 +212,5 @@
 ;; Windmove (switch buffers with shift + Arrow)
 (when (fboundp 'windmove-default-keybindings)
       (windmove-default-keybindings))
+
+(persp-mode)

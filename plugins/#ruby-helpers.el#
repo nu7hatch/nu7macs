@@ -1,5 +1,0 @@
-;;; ruby-helpers.el --- various helpers for ruby mode
-
-(defun insert-debugger ()
-  ()
-  (interactive))

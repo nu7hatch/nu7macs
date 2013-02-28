@@ -177,6 +177,8 @@
 	   ido-max-prospects 10)))
 
 ;; Autocompletion
+(add-to-list 'load-path (concat nu7macs-path "/vendor/popup"))
+(require 'popup)
 (add-to-list 'load-path (concat nu7macs-path "/vendor/auto-complete"))
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories (concat nu7macs-path "/vendor/auto-complete/dict"))

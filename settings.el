@@ -55,6 +55,8 @@
 	      (seq "\.status" eol)            ;; ...
 	      (seq bol "\.deps" eol)          ;; ...
 	      (seq bol "\.libs" eol)          ;; ...
+	      (seq bol "\.tmp" eol)           ;; ...
+	      (seq bol "\.sass-cache" eol)    ;; ...
 	      (seq bol "stamp-h1" eol)        ;; ...
 	      (seq bol "libtool" eol)         ;; ...
 	      (seq bol "autom4te.cache" eol)  ;; ...
@@ -88,6 +90,7 @@
 
 ;; Ruby mode
 (add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("^Gemfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("^Rakefile$" . ruby-mode))
@@ -109,6 +112,9 @@
 ;; Erlang mode settings
 (add-to-list 'auto-mode-alist '("\\.erl$" . erlang-mode))
 (add-to-list 'auto-mode-alist '("\\.hrl$" . erlang-mode))
+
+;; CSS mode settings
+(add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
 
 ;; Asciidoc mode settings
 (autoload 'doc-mode "doc-mode" nil t)
@@ -184,6 +190,10 @@
 (add-to-list 'ac-dictionary-directories (concat nu7macs-path "/vendor/auto-complete/dict"))
 (ac-config-default)
 (setq ac-auto-start 0)
+
+;; Editor config
+(add-to-list 'load-path (concat nu7macs-path "/vendor/editorconfig"))
+(load "editorconfig")
 
 ;; Make the server start on load
 (server-start)

@@ -4,3 +4,6 @@
 [submodule "vendor/popup"]
 	path = vendor/popup
 	url = git://github.com/auto-complete/popup-el.git
+[submodule "vendor/editorconfig"]
+	path = vendor/editorconfig
+	url = git://github.com/editorconfig/editorconfig-emacs.git

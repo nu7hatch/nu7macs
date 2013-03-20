@@ -14,8 +14,8 @@ Attention! This way of installation will overwrite your current configuration:
 
 Clone or download the nu7macs sources:
 
-    cd ~/.emacs.d
-    git clone git://github.com/nu7hatch/nu7macs.git
+    $ cd ~/.emacs.d
+    $ git clone git://github.com/nu7hatch/nu7macs.git
     
 ... and add following code to your `~/.emacs` config file: 
 

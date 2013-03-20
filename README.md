@@ -8,9 +8,7 @@ emacs.
 
 Attention! This way of installation will overwrite your current configuration:
 
-    wget http://github.com/nu7hatch/nu7macs/raw/master/install.sh
-    chmod u+x install.sh
-    ./install.sh
+    $ curl -L http://goo.gl/LuJWP | bash
 
 ### Manual installation
 
